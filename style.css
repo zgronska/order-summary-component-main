@@ -23,7 +23,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100vh
 }
 
 body {
@@ -70,25 +70,32 @@ body {
   background-image: url(/images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
   background-size: 100%;
-  display: grid;
-  place-content: center center;
   font-weight: 500;
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   margin: 2rem;
   background-color: #fff;
-  max-width: 25rem;
+  min-width: 20rem;
+  max-width: 28rem;
   border-radius: 1.5rem;
-  /* overflow: hidden; */
   display: grid;
+  box-shadow: 0px 0.8px 1.2px hsl(225deg 34% 70% / 0),
+    0px 13.7px 20.5px hsl(225deg 34% 70% / 0.46);
+  ;
+}
+
+.container img {
+  border-radius: 1.5rem 1.5rem 0 0;
 }
 
 .container-content {
   display: grid;
-  padding: 2em 3em;
-  gap: 1em;
+  padding: 2em 1em;
+  gap: 2em;
   text-align: center;
 }
 
@@ -96,14 +103,16 @@ body {
   color: var(--dark-blue);
   font-weight: 900;
   font-size: 1.5rem;
+  padding-bottom: 0.5em;
 }
 
 .text-content {
   color: var(--desaturated-blue);
-  padding-inline: 1em;
+  padding-inline: 2em;
 }
 
 .pricing-box {
+  width: 100%;
   background: var(--v-pale-blue);
   display: flex;
   align-items: center;
@@ -112,6 +121,7 @@ body {
   border-radius: 1em;
   padding: 1.5em 1em;
   gap: 1em;
+  font-size: 0.9em;
 }
 
 .price-text {
@@ -142,28 +152,47 @@ body {
 .btn-proceed {
   background: var(--bright-blue);
   color: #fff;
-  text-decoration: none;
   border-radius: 0.5em;
   padding-block: 1em;
-  font-weight: 700;
+  box-shadow: 0px 0.8px 1.2px hsl(245deg 75% 52% / 0),
+    0px 3.5px 5.3px hsl(245deg 75% 52% / 0.12),
+    0px 6.8px 10.2px hsl(245deg 75% 52% / 0.23),
+    0px 13.7px 20.5px hsl(245deg 75% 52% / 0.35);
+  ;
 }
 
 .btn-proceed:hover {
   background: var(--bright-blue-lighter);
+  box-shadow: 0px 0.8px 1.2px hsl(245deg 75% 67% / 0),
+    0px 3.5px 5.3px hsl(245deg 75% 67% / 0.12),
+    0px 6.8px 10.2px hsl(245deg 75% 67% / 0.23),
+    0px 13.7px 20.5px hsl(245deg 75% 67% / 0.35);
+  ;
 }
 
 .btn-cancel {
-  font-weight: 700;
+
   color: var(--desaturated-blue);
 }
 
 .btn-cancel:hover {
-  text-decoration: none;
   color: var(--dark-blue);
 }
+
+.btn-cancel,
+.btn-proceed {
+  font-weight: 700;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
 
 @media screen and (min-width: 600px) {
   body {
     background-image: url(/images/pattern-background-desktop.svg);
+  }
+
+  .container-content {
+    padding: 2em 3em;
   }
 }
